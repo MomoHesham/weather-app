@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover {
+  color: rgb(13, 202, 240);
+  border: solid 2px;
+}
+.navbar .navbar-nav .nav-link.active:hover{
+  color: white;
+  background-color: rgb(13, 202, 240);
+  border-color: rgb(13, 202, 240);
+}
+.navbar a {
+  color: white;
+  border: solid 2px transparent;
+  transition: all 0.5s;
+}
+
+button {
+  width: 100px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+}
+.weatherSection .todayDetails .locationWeather h2 {
+  font-size: 7rem;
+}
+.weatherSection .todayContainer .todayDetails {
+  height: 94%;
+}
+.weatherSection .weatherContent.todayDetails,
+.weatherSection .tomorrowsHeader {
+  background-color: #1e202b;
+}
+.weatherSection .afterTodayContent:first-child {
+  margin-bottom: 2rem;
+}
+footer .socialMedia a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s;
+}
+
+footer .socialMedia a:hover {
+  background-color: #0dcaf0 !important;
+  color: white !important;
+}
