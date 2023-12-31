@@ -8,15 +8,12 @@ let myDate = new Date();
 let latitude;
 let longitude
 
-// weatherData("Alexandria"); 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
 function showPosition(p) {
     latitude = p.coords.latitude;
     longitude = p.coords.longitude;
-    console.log(longitude);
-    console.log(latitude);
     weatherData(`${latitude}, ${longitude}`)
 }
 
@@ -29,12 +26,7 @@ function weatherData(city) {
 
     myhttp.addEventListener("readystatechange", function () {
         if (myhttp.readyState == 4 && myhttp.status == 200) {
-
             today = JSON.parse(myhttp.response);
-            // console.log(days[myDate.getDay(today.current.last_updated)]);
-            // console.log(myDate.getDate(today.forecast.forecastday[1].date));
-            console.log(today);
-
             displayToday();
             displayAfterToday()
         }
@@ -42,7 +34,6 @@ function weatherData(city) {
 };
 
 searchBar.addEventListener("input", function (e) {
-    // console.log(e.target.value);
     weatherData(e.target.value);
 })
 
