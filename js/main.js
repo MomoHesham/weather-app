@@ -5,11 +5,21 @@ let today = [];
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let myDate = new Date();
+let latitude;
+let longitude
 
+// weatherData("Alexandria"); 
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(p) {
+    latitude = p.coords.latitude;
+    longitude = p.coords.longitude;
+    console.log(longitude);
+    console.log(latitude);
+    weatherData(`${latitude}, ${longitude}`)
+}
 
-
-
-weatherData("Alexandria");
 function weatherData(city) {
     let myhttp = new XMLHttpRequest();
 
